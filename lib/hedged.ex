@@ -37,6 +37,7 @@ defmodule Hedged do
 
   """
 
+  @typedoc "Options for stateless `run/2`."
   @type option ::
           {:delay, non_neg_integer()}
           | {:max_requests, pos_integer()}
@@ -45,6 +46,7 @@ defmodule Hedged do
           | {:on_hedge, (pos_integer() -> any()) | nil}
           | {:now_fn, (:millisecond -> integer())}
 
+  @typedoc "Options for `start_link/1` and `child_spec/1`."
   @type tracker_option ::
           {:name, GenServer.name()}
           | {:percentile, number()}
@@ -179,6 +181,15 @@ defmodule Hedged do
 
   @doc """
   Returns a child specification for use in a supervision tree.
+
+  ## Example
+
+      children = [
+        {Hedged, name: MyHedge, percentile: 99}
+      ]
+
+      Supervisor.start_link(children, strategy: :one_for_one)
+
   """
   @spec child_spec([tracker_option()]) :: Supervisor.child_spec()
   def child_spec(opts) do

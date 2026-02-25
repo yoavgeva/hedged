@@ -8,6 +8,7 @@ defmodule Hedged.Percentile do
 
   defstruct samples: :queue.new(), size: 0, max_size: 1000
 
+  @typedoc "Circular buffer holding latency samples for percentile queries."
   @type t :: %__MODULE__{
           samples: any(),
           size: non_neg_integer(),
