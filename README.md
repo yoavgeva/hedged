@@ -1,5 +1,8 @@
 # Hedged
 
+> **Deprecated** — This package has been merged into [`resiliency`](https://github.com/yoavgeva/resiliency).
+> Use `Resiliency.Hedged` instead. This repo is archived and will not receive further updates.
+
 [![Hex](https://img.shields.io/hexpm/v/hedged.svg)](https://hex.pm/packages/hedged)
 [![CI](https://github.com/yoavgeva/hedged/actions/workflows/ci.yml/badge.svg)](https://github.com/yoavgeva/hedged/actions/workflows/ci.yml)
 
